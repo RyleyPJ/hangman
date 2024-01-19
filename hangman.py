@@ -32,8 +32,8 @@ def get_letter(guessed_letters):
                 print("You have already guessed that, please try a different letter!")
             else:
                 return letter 
-            else:
-                print("Invalid input. Please try a different letter!")
+    else:
+        print("Invalid input. Please try a different letter!")
             
 
 #Code to run the game
