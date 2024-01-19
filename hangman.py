@@ -1,17 +1,41 @@
 import random 
 
-def choose_word()
+def choose_word():
     words = ["Python", "computer", "programming", "power"]
-    return words[random.randint(0, words.length - 1)]
+    return random.choice(words)
 
-def choose_word()
-    print("Welcome to the hangman, please enjoy and choose any letters")
-    def get_letter(letter):
-        if letter in guessed_letters:
-            print("You have already guessed that letter, please try a different letter"):
-            return False
+def hangman():
+    chosen_word = choose_word().lower()
+    guessed_letters = set
     
-def chosen_word(word):
-    print("Well done, you guessed the word in " + str(len(guessed_letters)) +)
-    print(word)
+    print("Welcome to hangman, please guess a letter!")
     
+    while True: 
+        guess = get_letter(guessed_letters)
+        guessed_letters.add(guess)
+        
+        if guess in choose_word:
+            print("Correct")
+        else:
+            print("Incorrect")
+            
+            if all(letter in guessed_letters for letter in chosen_word):
+                print("Congratulationa, you have guessed the word!", chosen_word)
+                break
+
+def get_letter(guessed_letters):
+    while True:
+        letter = input("Enter a letter: ").lower()
+        
+        if letter.isalpha() and len(letter) == 1:
+            if letter in guessed_letters:
+                print("You have already guessed that, please try a different letter!")
+            else:
+                return letter 
+            else:
+                print("Invalid input. Please try a different letter!")
+            
+
+#Code to run the game
+
+hangman()
